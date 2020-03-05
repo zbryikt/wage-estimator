@@ -1,0 +1,104 @@
+doctype html
+html
+  include /../../static/assets/lib/ldui/pug/ldui.pug
+  head
+    +css("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+    +css("/assets/lib/ldui/ldui.min.css")
+    +css("/css/index.css")
+  body
+    .w-768.mx-auto.rwd.typeset.heading-contrast
+      h2 軟體外包工程款估算機
+      hr
+
+      h3 發包方考量
+      p 依 #[a(href="https://www.104.com.tw/jb/wage/list?type=1&jobcat=2007001000&cat=jobmake") 2020 年 3 月 1 日 104 人力銀行之數據]，軟體設計工程師之平均月薪資約為 #[b(ld="monthly-salary")] 元。以時薪來算，約為 #[b(ld="hourly-salary-20")] 元 ( 一個月算 22 天 ) / #[b(ld="hourly-salary-30")] 元 ( 一個月算 30 天 )。若以一個 #[b(ld="minimal-work")] 天工作量的專案來說，最低成本約為 #[b(ld="minimal-cost")] 元。
+      p 考慮到對發案公司 ( 甲方 ) 而言，正職員工實質上不光只有薪水需要負擔，同時聘僱合約代表了一個長期的承諾，也有潛在的資遣費。比方說，以下成本都是薪資以外 甲方 需要負擔的：
+      ul
+        li 勞保
+        li 勞退
+        li 健保
+        li 健保補充保費
+        li 空間成本
+        li 特休、病假
+        li 獎金 ( 三節、年終 )
+        li 行政支出 ( 文具、茶水或資訊系統如 email, slack 等負擔 )
+        li 設備折舊 ( 電腦、辦公設備等其折舊 ) 
+
+      p 若只抓個大概，光從帳面支出來看，甲方 一般得多負擔 #[b(ld="expense-rate") 25] 倍 的薪資；也就是說，聘雇一位月薪資 #[b(ld="monthly-salary")] 元的工程師，甲方 實際的月支出為 #[b(ld="monthly-expense")] 元。
+      p 因此，有時候 ( 尤期是短期、一次性的需求 ) 不如發包給接案公司 ( 乙方 ) 來做比較划算。
+      h3 接案方考量
+      p 但這不能說我們發包一個月的專案給 乙方，平均只需要 #[b(ld="monthly-expense")] 元，因為從接案公司的角度來看，還有以下這些因素：
+      ul
+        li 接案成本 - 每接到一個案子，需要花多少時間跟人力？
+        li 時程與專業 - 接案公司往往已建立了套件與流程，比自聘省下不少時間。
+        li 合理利潤 - 若純以人力來估計預算，接案公司將無利潤空間。
+      p 各個因素有正有負，有些是成本，有些則是籌碼。
+      h4 接案成本
+      p 若正職員工上班打混摸魚，薪水還是照領，但 乙方 沒案子就是沒飯吃。而為了接到一個案子，乙方可能需要額外的人力提案、跑流程、而付出時間後仍不一定能夠包到工程。公司為了繼續生存，這些成本勢必得由其它案子的收入來補充。
+      h4 時程與專業
+      p 有時 甲方 會有許多異想天開的需求，比方說 「我只要一個簡單會轉的 3D 人頭就好 」「差不多像 LINE 一樣的功能」一般來說只要花時間，合格的軟體工程師最終都有機會產出一個可能符合需求的產品，但要花多少時間因人而異，也與員工的背景相關。但人聘了就是聘了，如果你找了一個後端工程師請他用 WebGL 做效果，他可能會一個頭兩個大，最後花了三個月做了一個鳥鳥的成果出來。
+      p 這時若直接開需求給符合條件的 乙方 ，由於 乙方 有經驗，或許能以更短的時程產出更好的結果，最後花了兩個禮拜做出一個穩定、跨平台、向下相容的成果。
+      p 那麼、你該以兩個禮拜還是三個月來算工錢呢？考慮到專業，顯然以兩周來考慮是很不合理的，而若 乙方 技能有一定的稀缺性，很可能預算最後更是要以倍數計。
+      p 此外，也有另一種相反的情況 - 因為模板與流程的建立使得成本大大的壓低，再加上有足夠的需求的情況下， 乙方 甚至可能用遠低於成本的價格以租用的形式提供服務給 甲方 。舉個例子來說，從頭打造一個 Slack 顯然需要龐大的預算，相較之下訂閱 Slack 的服務顯得划算多了。對 乙方 來說，這同時也消滅了不少潛在的競爭對手。
+      h4 合理利潤
+      p 考慮到營業的目的即為獲利，如果只是要拿個平均工資，還不如去就業找工作。同時間，甲方 發案的同時，也等於將原本應該負擔的成本轉嫁到了 乙方 身上 - 乙方必須負擔員工的勞健保、行政支出、設備等薪資以外的成本。此外，還有 甲乙雙方 額外的溝通成本。也因此，如果今天 乙方 是完全人工客製化 甲方 訂做的產品，最低限度的預算考量至少也要將這些成本考量進去。
+      p 除此之外，還有很多隱性成本是不容易被注意到的；比方說以下兩種情況：
+      ul
+        li 情境 A : 一天的案子做 10 個 
+        li 情境 B : 十天的案子做 1 個 
+      p 情境 A 顯然比起情境 B 要更勞心勞力，光是客戶關係維護與建檔就崩潰了，也更不容易找到這麼多案源。因此，越短期、越簡單的需求，往往越容易讓人覺得報價過高。
+      p 此外，拉高短期需求的估價更容易讓大單的訂價顯得划算，進而促使成交。長期的訂報、手機綁約、軟體服務的年費往往會比短期、一次性的看起來划算，這也為 乙方 提高了利潤空間。
+
+      h4 利潤以外的考量
+      p 除了錢錢錢以外的因素，有時還要考慮個人接案者的理念、興趣，未來發展、合作的可能性等等，不過這些因素太難估算了，在此不談。
+
+      h4 總結
+      p 跟發包方不同，接案方很多的因素都無法具體化，但總地來說，我們大約可以給出一個模糊的公式：
+      .code-block.example.
+        報價 = 工時 * 時薪 x (1 + 標案成本 * 1/接單率) x 短期懲罰 x ( 1 + 營運成本 ) x 專業加成
+      p 如果給定以下條件：
+      .row.text-center.bg-light.border.shadow-sm.no-gutters.mb-4.p-4.rounded
+        .col-md #[label 工時] #[.text-lg.font-weight-bold 1]#[.text-sm 個月]
+        .col-md #[label 時薪] #[.text-lg.font-weight-bold(ld="monthly-salary")]#[.text-sm 元]
+        .col-md #[label 標案成本] #[.text-lg.font-weight-bold 1%]#[.text-sm 薪資]
+        .col-md #[label 接單成功率] #[.text-lg.font-weight-bold 50%]#[.text-sm 成功]
+        .col-md #[label 短期懲罰] #[.text-lg.font-weight-bold 1.25]#[.text-sm 倍]
+        .col-md #[label 營運成本] #[.text-lg.font-weight-bold 0.25]#[.text-sm 倍]
+        .col-md #[label 專業加成] #[.text-lg.font-weight-bold 1.1]#[.text-sm 倍]
+        .col-md #[label 利潤] #[.text-lg.font-weight-bold 1.15]#[.text-sm 倍]
+
+      p 大約需要 #[span(ld="one-month-fee")] 元。這沒有考慮到模板化的狀況，就先假設 甲方 的需求相當的客製化因此 乙方 必須重頭許多元件吧。
+      p 考量到這個數字相當模糊，我們亦可以從另一個角度思考；直接給定一個人力預期帶來的月收益，再去評估長期成本與專案估價。比方說，若我們期望一個人力可以帶來 15 萬的月收入，年營收 180 萬，依經驗扣掉成本開支 150 萬，則公司還有 30 的緩衝與獲利空間，可以接受，那便可以街著以這個金額為主，來與 甲方 談判。
+
+
+      h2 回歸實際需求
+      p 雖然算了 甲、乙雙方的數據，但合理的開價不代表成交，實際上甲方對這個專案的需求有多強，可能決定了一切。如果一個專案可以幫 甲方 多賺一千萬，就算只是寫一行字，掏個一百萬出來寫也合理；但如果只是個 Nice To Have，幫人家跑斷腿說不定一千元都要再考慮。
+      p 也就是說，
+      ul
+        li 對 甲方 來說，如果東西不是這麼重要，那是不是發包前還是多考慮一下，不要出來害人了；
+        li 對 乙方 來說，還是多花點時間找找影響力大又沒有競爭的領域吧。
+
+
+
+      
+    +script("/assets/lib/ldui/ldui.min.js")
+
+    script: :lsc
+      handler = {}
+      cfg = do
+        "monthly-salary": 51695
+        "minimal-work": 2
+        "expense-rate": 0.25
+      cfg["hourly-salary-20"] = Math.round(cfg["monthly-salary"] / 20 / 8)
+      cfg["hourly-salary-30"] = Math.round(cfg["monthly-salary"] / 30 / 8)
+      cfg["monthly-expense"] = Math.round(cfg["monthly-salary"] * (1 + cfg["expense-rate"]))
+      cfg["minimal-cost"] = cfg["minimal-work"] * 8 * cfg["hourly-salary-30"]
+      cfg["one-month-fee"] = Math.round(cfg["monthly-salary"] * ( 1 + 0.01 / 0.5 ) * 1.25 * 1.25 * 1.1 * 1.15)
+      for k,v of cfg =>
+        _ = (k, v) -> handler[k] = ({node}) -> node.innerText = cfg[k]
+        _(k,v)
+      view = new ldView do
+        root: document.body
+        handler: handler
+
+    script(type="text/javascript") var _jf = _jf || [];_jf.push(['p','59542']);_jf.push(['initAction',true]);_jf.push(['_setFont','xingothic-tc-w3','css','.xingothic-tc-w3']);_jf.push(['_setFont','xingothic-tc-w3','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w3','weight',300]);_jf.push(['_setFont','jf-jinxuan-bold','css','.jf-jinxuan-bold']);_jf.push(['_setFont','jf-jinxuan-bold','alias','jf-jinxuan']);_jf.push(['_setFont','jf-jinxuan-bold','weight',700]);(function(A,p,c,m,l,q,r,h,B,D){var b=A._jf;if(b.constructor!==Object){var t=!0,u=function(a){var f=!0,e;for(e in b)b[e][0]==a&&(f&&(f=f&&!1!==b[e][1].call(b)),b[e]=null,delete b[e])},v=/\S+/g,w=/[\t\r\n\f]/g,C=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,n="".trim,x=n&&!n.call("\ufeff\u00a0")?function(a){return null==a?"":n.call(a)}:function(a){return null==a?"":(a+"").replace(C,"")},k=function(a){var f,b,g;if("string"===typeof a&&a&&(a=(a||"").match(v)||[],f=h[c]?(" "+h[c]+" ").replace(w," "):" ")){for(g=0;b=a[g++];)0>f.indexOf(" "+b+" ")&&(f+=b+" ");h[c]=x(f)}},d=function(a){var b,e,g;if(0===arguments.length||"string"===typeof a&&a){var d=(a||"").match(v)||[];if(b=h[c]?(" "+h[c]+" ").replace(w," "):""){for(g=0;e=d[g++];)for(;0<=b.indexOf(" "+e+" ");)b=b.replace(" "+e+" "," ");h[c]=a?x(b):""}}},y;b.addScript=y=function(b,f,e,g,d,c){d=d||function(){};c=c||function(){};var a=p.createElement("script"),h=p.getElementsByTagName("script")[0],k,m=!1,l=function(){a.src="";a.parentNode.removeChild(a);a=a.onerror=a.onload=a.onreadystatechange=null};g&&(k=setTimeout(function(){l();c()},g));a.type=f||"text/javascript";a.async=e;a.onload=a.onreadystatechange=function(b,c){m||a.readyState&&!/loaded|complete/.test(a.readyState)||(m=!0,g&&clearTimeout(k),l(),c||d())};a.onerror=function(a,b,d){g&&clearTimeout(k);l();c();return!0};a.src=b;h.parentNode.insertBefore(a,h)};for(var z in b)"initAction"==b[z][0]&&(t=b[z][1]);b.push(["_eventPreload",function(){1==t&&k(m);y(B,null,!1,3E3,null,function(){u("_eventInactived")})}]);b.push(["_eventReload",function(){d(r);d(q);k(l)}]);b.push(["_eventActived",function(){d(m);d(l);k(q)}]);b.push(["_eventInactived",function(){d(m);d(l);k(r)}]);u("_eventPreload")}})(this,this.document,"className","jf-loading","jf-reloading","jf-active","jf-inactive",this.document.getElementsByTagName("html")[0],"//d3gc6cgx8oosp4.cloudfront.net/js/stable/v/5.0.6/id/232745737846");
